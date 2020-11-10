@@ -28,31 +28,31 @@ function controllerBtnEvent(c, e, callback) {
 boardReady({board: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   car = getToyCar(board, 14, 16, 2, 5);
-  controllerBtnEvent(getElement('#demo-area-09 .btn-up'),['mousedown', 'touchstart'], function () {
+  controllerBtnEvent(getElement('#btn-group .up'),['mousedown', 'touchstart'], function () {
     car.goFront();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-down'),['mousedown', 'touchstart'], function () {
+  controllerBtnEvent(getElement('#btn-group .down'),['mousedown', 'touchstart'], function () {
     car.goBack();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-left'),['mousedown', 'touchstart'], function () {
+  controllerBtnEvent(getElement('#btn-group .left'),['mousedown', 'touchstart'], function () {
     car.turnLeft();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-right'),['mousedown', 'touchstart'], function () {
+  controllerBtnEvent(getElement('#btn-group .right'),['mousedown', 'touchstart'], function () {
     car.turnRight();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-center'),['mousedown', 'touchstart'], function () {
+  controllerBtnEvent(getElement('#btn-group .center'),['mousedown', 'touchstart'], function () {
     car.stop();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-up'),['mouseup', 'touchend'], function () {
+  controllerBtnEvent(getElement('#btn-group .up'),['mouseup', 'touchend'], function () {
     car.stop();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-down'),['mouseup', 'touchend'], function () {
+  controllerBtnEvent(getElement('#btn-group .down'),['mouseup', 'touchend'], function () {
     car.stop();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-left'),['mouseup', 'touchend'], function () {
+  controllerBtnEvent(getElement('#btn-group .left'),['mouseup', 'touchend'], function () {
     car.stop();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-right'),['mouseup', 'touchend'], function () {
+  controllerBtnEvent(getElement('#btn-group .right'),['mouseup', 'touchend'], function () {
     car.stop();
   });
 });
