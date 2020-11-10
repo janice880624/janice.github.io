@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title> Device ID </title>
 
 </head>
@@ -10,8 +11,23 @@
     <form name='form' id='form'>
         Device ID：
         <input type='text' name='device_id' id='device_id' />
-        <input type="button" name="submit" value="送 出" class="btn" onclick="location.href='control/control.html'" />
+        <input type="button" name="submit" value="送 出" class="btn" onclick='processFormData();'>
       </form>
 </body>
 
+<script>
+  function processFormData() {
+    var formElement = document.getElementById("form");
+    var device_id = formElement[0].value;
+    alert("device_id:" + device_id );
+    location.href = "control/control.html"
+  }
+</script>
+
+
 </html>
+
+<!-- onclick="location.href='control/control.html'" -->
+<!-- <input type="button" name="submit" value="送 出" class="btn" onclick='location.href="control/control.html?device_id"'> -->
+
+<!-- 10Vk7gDV -->
