@@ -4,8 +4,7 @@ var url = location.href;
 var device_id = url.split("?");
 console.log('=> ' + device_id);
 
-// var device_id = 
-// console.log('=> ' + device_id);
+
 
 function getElement(dom) {
   var element = document.querySelector(dom);
@@ -32,7 +31,7 @@ function controllerBtnEvent(c, e, callback) {
 }
 
 
-boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (board) {
+boardReady({board: 'Smart', device: "10Vk7gDV", transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   car = getToyCar(board, 14, 16, 2, 5);
   controllerBtnEvent(getElement('#btn-group .up'),['mousedown', 'touchstart'], function () {
