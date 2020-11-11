@@ -8,19 +8,15 @@
 
 </head>
 <body>
-    <form name='form' id='form'>
-        Device ID：
-        <input type='text' name='device_id' id='device_id' />
-        <input type="button" name="submit" value="送 出" class="btn" onclick='processFormData();'>
-      </form>
+  <input type="text" id="device_id">
+  <input type="button" value="送出" onclick="test()"/>
 </body>
 
 <script>
-  function processFormData() {
-    var formElement = document.getElementById("form");
-    var device_id = formElement[0].value;
-    alert("device_id:" + device_id );
-    location.href = "control/control.html"
+  function
+   test(){
+    var s =document.getElementById("device_id");
+    location.href="control/control.html?"+"device_id="+encodeURI(s.value);
   }
 </script>
 
@@ -31,3 +27,21 @@
 <!-- <input type="button" name="submit" value="送 出" class="btn" onclick='location.href="control/control.html?device_id"'> -->
 
 <!-- 10Vk7gDV -->
+
+
+<!-- <input type="text" id="device_id">
+<input type="text" id="txt"> 
+
+</br>
+
+<input type="button" value="送出" onclick="test()"/>
+
+
+<script LANGUAGE="JavaScript">
+  function
+   test(){
+    var s =document.getElementById("device_id");
+    location.href="b.html?"+"device_id="+encodeURI(s.value);
+   }
+
+</script> -->
