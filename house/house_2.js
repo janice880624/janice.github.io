@@ -1,3 +1,11 @@
+var loc=location.href;
+var n1=loc.length; //地址的總長度
+var n2=loc.indexOf("="); //取得=號的位置
+var device_id = decodeURI(loc.substr(n2+1, n1-n2));//從=號後面的内容
+alert("Device ID:" + device_id); 
+// document.write("device_id:"+device_id)
+console.log('=> ' + device_id);
+
 var lcd1602;
 var led;
 var led2;
@@ -56,7 +64,7 @@ function buzzer_music(m) {
 }
 
 
-boardReady({board: 'Smart', device: 'EG3aN', transport: 'mqtt'}, async function (board) {
+boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, async function (board) {
   board.samplingInterval = 50;
   lcd1602 = getLCD1602(board,4,5,0x27);
   led = getLed(board, 0);
