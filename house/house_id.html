@@ -10,17 +10,16 @@
 <body>
   <b> <font face="monospace">請輸入 Device ID :</font></b>
   <input type="text" id="device_id">
-  <input type="button" value="送出" onclick="test()"/>
+  <input type="button" value="送出" onclick="test()"/> </br>
+  <input type="button" value="展場 demo 用" onclick="location.href='house_2.html'">
 </body>
 
 <script>
   function
    test(){
     var s =document.getElementById("device_id");
-    location.href="control/control.html?"+"device_id="+encodeURI(s.value);
+    location.href="house.html?"+"device_id="+encodeURI(s.value);
   }
 </script>
 
 </html>
-
-<!-- 目前的板子:10Vk7gDV -->
