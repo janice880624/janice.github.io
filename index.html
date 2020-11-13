@@ -4,22 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <title> Device ID </title>
+    <title> 體驗選單 </title>
 
 </head>
 <body>
-  <b> <font face="monospace">請輸入 Device ID :</font></b>
-  <input type="text" id="device_id">
-  <input type="button" value="送出" onclick="test()"/>
+  <input type="button" value="自走車" onclick="location.href='car_id.html'">
+  <input type="button" value="智慧房屋" onclick="location.href='house_id.html'">
 </body>
 
-<script>
-  function
-   test(){
-    var s =document.getElementById("device_id");
-    location.href="control/control.html?"+"device_id="+encodeURI(s.value);
-  }
-</script>
 
 </html>
 
