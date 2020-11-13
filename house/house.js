@@ -1,3 +1,11 @@
+var loc=location.href;
+var n1=loc.length; //地址的總長度
+var n2=loc.indexOf("="); //取得=號的位置
+var device_id = decodeURI(loc.substr(n2+1, n1-n2));//從=號後面的内容
+alert("Device ID:" + device_id); 
+// document.write("device_id:"+device_id)
+console.log('=> ' + device_id);
+
 var lcd1602;
 var led;
 var led2;
@@ -56,7 +64,7 @@ function buzzer_music(m) {
 }
 
 
-boardReady({board: 'Smart', device: 'EG3aN', transport: 'mqtt'}, async function (board) {
+boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, async function (board) {
   board.samplingInterval = 50;
   lcd1602 = getLCD1602(board,4,5,0x27);
   led = getLed(board, 0);
@@ -70,29 +78,29 @@ boardReady({board: 'Smart', device: 'EG3aN', transport: 'mqtt'}, async function 
   await delay(1);
   lcd1602.print('Hello');
   dht.read(async function(evt){
-    document.querySelector("#demo-area-09 .btn-show").innerHTML = ([dht.temperature,'˚C，',dht.humidity,'%'].join(''));
+    document.querySelector("#btn-group .show").innerHTML = ([dht.temperature,'˚C，',dht.humidity,'%'].join(''));
   }, 1000);
-  controllerBtnEvent(getElement('#demo-area-09 .btn-num1'),'click', async function () {
+  controllerBtnEvent(getElement('#btn-group .num1'),'click', async function () {
     lcd1602.clear();
     servo.angle = 175;
     await delay(0.5);
     lcd1602.print('Welcome Home');
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-num2'),'click', async function () {
+  controllerBtnEvent(getElement('#btn-group .num2'),'click', async function () {
     lcd1602.clear();
     servo.angle = 90;
     buzzer.play(buzzer_music([{ notes : ["C6","D6","E6","F6","G6","A6","B6"] , tempos : ["8","8","8","8","8","8","8"] }]).notes ,buzzer_music([{ notes : ["C6","D6","E6","F6","G6","A6","B6"] , tempos : ["8","8","8","8","8","8","8"] }]).tempos );
     await delay(0.5);
     lcd1602.print('BYE');
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-num3'),'click', async function () {
+  controllerBtnEvent(getElement('#btn-group .num3'),'click', async function () {
     led2.blink(500);
     buzzer.play(buzzer_music([{ notes:['E7','E7','0','E7','0','C7','E7','0','G7','0','0','0','G6','0','0','0','C7','0','0','G6','0','0','E6','0','0','A6','0','B6','0','AS6','A6','0','G6','E7','0','G7','A7','0','F7','G7','0','E7','0','C7','D7','B6','0','0','C7','0','0','G6','0','0','E6','0','0','A6','0','B6','0','AS6','A6','0','G6','E7','0','G7','A7','0','F7','G7','0','E7','0','C7','D7','B6','0','0'] , tempos:['8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8'] }]).notes ,buzzer_music([{ notes:['E7','E7','0','E7','0','C7','E7','0','G7','0','0','0','G6','0','0','0','C7','0','0','G6','0','0','E6','0','0','A6','0','B6','0','AS6','A6','0','G6','E7','0','G7','A7','0','F7','G7','0','E7','0','C7','D7','B6','0','0','C7','0','0','G6','0','0','E6','0','0','A6','0','B6','0','AS6','A6','0','G6','E7','0','G7','A7','0','F7','G7','0','E7','0','C7','D7','B6','0','0'] , tempos:['8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8', '8'] }]).tempos );
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-num4'),'click', async function () {
+  controllerBtnEvent(getElement('#btn-group .num4'),'click', async function () {
     led.toggle();
   });
-  controllerBtnEvent(getElement('#demo-area-09 .btn-num5'),'click', async function () {
+  controllerBtnEvent(getElement('#btn-group .num5'),'click', async function () {
     led2.off();
     buzzer.stop();
   });
