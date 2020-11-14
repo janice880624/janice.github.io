@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title> 體驗選單 </title>
-
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js"></script>
 </head>
 <body>
-  <input type="button" value="自走車" onclick="location.href='car/car_id.html'">
-  <input type="button" value="智慧房屋" onclick="location.href='house/house_id.html'">
+  <div class='car-group'>
+    <img src="img/sportcar.png" id='car_img'>
+    </br>
+    <input id='car_btn' type="button" value="自走車" onclick="location.href='car/car_id.html'"></div>
+  </div>
+
+  <div class='house-group'>
+    <img src="img/home.png" id='house_img'>
+    </br>
+    <input id='house_btn' type="button" value="智慧房屋" onclick="location.href='house/house_id.html'">
+  </div>
+
+  
+  
 </body>
 
 

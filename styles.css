@@ -1,0 +1,28 @@
+#car_btn, #house_btn{
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+#car_img{
+    width: 80%;
+}
+
+#house_img {
+    width: 50%;
+}
+
+.car-group{
+    text-align: center;
+    border:5px #7d54db solid;
+    margin: 10px 10%;
+    padding-bottom: 5px;
+
+}
+
+.house-group{
+    text-align: center;
+    border:5px #fdc305 solid;
+    margin: 10px 10%;
+    padding-bottom: 5px;
+
+}

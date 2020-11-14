@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title> Device ID </title>
+    <link rel="stylesheet" href="house_id.css">
 
 </head>
 <body>
-  <b> <font face="monospace">請輸入 Device ID :</font></b>
-  <input type="text" id="device_id">
-  <input type="button" value="送出" onclick="test()"/> </br>
-  <input type="button" value="展場 demo 用" onclick="location.href='house_2.html'">
+  <div id='control'>
+    <b> <font face="monospace">請輸入 Device ID </font></br>
+    <input type="text" id="device_id"> </br> 
+    <input type="button" value="送出" onclick="test()"/> 
+  </div>
+  <div id='demo-group'>
+    <img src="../img/exhibition.png" id='demo_img'></br>
+    <input type="button" value="展場 demo 用" onclick="location.href='house_2.html'" id='demo_btn'>
+  </div>
 </body>
 
 <script>
