@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title> Device ID </title>
-    <link rel="stylesheet" href="house_id.css">
+    <link rel="stylesheet" href="plug_id.css">
 
 </head>
 <body>
@@ -16,7 +16,7 @@
   </div>
   <div id='demo-group'>
     <img src="../img/exhibition.png" id='demo_img'></br>
-    <input type="button" value="展場 demo 用" onclick="location.href='house_demo.html'" id='demo_btn'>
+    <input type="button" value="展場 demo 用" onclick="location.href='plug_demo.html'" id='demo_btn'>
   </div>
 </body>
 
@@ -24,7 +24,7 @@
   function
    test(){
     var s =document.getElementById("device_id");
-    location.href="house.html?"+"device_id="+encodeURI(s.value);
+    location.href="plug.html?"+"device_id="+encodeURI(s.value);
   }
 </script>
 

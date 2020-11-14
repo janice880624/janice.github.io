@@ -1,0 +1,15 @@
+#light img{
+    height: 200px;
+    display: none;
+    pointer-events: auto!important;
+  }
+  
+  #dlight.on #on{
+    display: inline-block;
+    pointer-events: auto!important;
+  }
+  
+  #light.off #off{
+    display: inline-block;
+    pointer-events: auto!important;
+  }

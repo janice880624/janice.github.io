@@ -1,6 +1,6 @@
 #control {
     text-align: center;
-    border:2px #7d54db solid;
+    border:2.5px #7d54db solid;
     border-radius: 5px;
     margin: 10px 10%;
     padding-bottom: 5px;
@@ -17,14 +17,19 @@
 
 #demo-group{
     text-align: center;
-    border:2px #7d54db solid;
+    border:2.5px #7d54db solid;
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
 
 }
 
-#demo_btn{
+#demo_btn, #test_button{
     font-size: 20px;
     border-radius: 3px;
+}
+
+#input {
+    font-size: 20px;
+    font-family:monospace;
 }
