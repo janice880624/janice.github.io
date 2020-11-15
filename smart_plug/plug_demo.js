@@ -1,11 +1,11 @@
 var relay;
-var status;
+var light_statue;
 
 
 boardReady({board: 'Smart', device: '10ypKngd', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   relay = getRelay(board, 5);
-  status = false;
+  light_statue = false;
   document.getElementById('light').className = 'off';
   relay.off();
   document.getElementById('light').addEventListener('click', function () {
@@ -14,12 +14,12 @@ boardReady({board: 'Smart', device: '10ypKngd', transport: 'mqtt'}, function (bo
     } else {
       document.getElementById('light').className = 'on';
     }
-    if (status === false) {
+    if (light_statue === false) {
       relay.on();
-      status = true;
-    } else if (status === true) {
+      light_statue = true;
+    } else if (light_statue === true) {
       relay.off();
-      status = false;
+      light_statue = false;
     }
   });
 });
