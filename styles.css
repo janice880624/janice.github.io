@@ -1,4 +1,4 @@
-#car_btn, #house_btn, #plug_btn{
+#car_btn, #house_btn, #plug_btn, #plant_btn{
     font-size: 20px;
     border-radius: 5px;
 }
@@ -16,9 +16,14 @@
     width: 50%;
 }
 
+#plant_img {
+    margin-top: 10px;
+    width: 50%;
+}
+
 .car-group{
     text-align: center;
-    border:5px #7d54db solid;
+    border:5px #87858b solid;
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
@@ -26,7 +31,7 @@
 
 .house-group{
     text-align: center;
-    border:5px #fdc305 solid;
+    border:5px #87858b solid;
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
@@ -34,8 +39,17 @@
 
 .plug-group{
     text-align: center;
-    border:5px #fdc305 solid;
+    border:5px #87858b solid;
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
 }
+
+.plant-group{
+    text-align: center;
+    border:5px #87858b solid;
+    margin: 10px 10%;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
