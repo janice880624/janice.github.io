@@ -21,66 +21,57 @@ body{
 }
 
 #car_img{
-    width: 50%;
+    width: auto;
+    height: 200px;
 }
 
 #house_img {
-    width: 70%;
+    width: auto;
+    height: 200px;
 }
 
 #plug_img {
     margin-top: 10px;
-    width: 50%;
+    width: auto;
+    height: 180px;
 }
 
 #plant_img {
     margin-top: 10px;
-    width: 50%;
+    width: auto;
+    height: 200px;
 }
 
 .car-group{
     text-align: center;
     border:5px #87858b solid;
-    margin: 10px 10%;
+    margin: 10px 10px;
     padding-bottom: 5px;
     border-radius: 5px;
-    height: height;
-    width: 30%;
 }
 
 .house-group{
     text-align: center;
     border:5px #87858b solid;
-    margin: 10px 10%;
+    margin: 10px 10px;
     padding-bottom: 5px;
     border-radius: 5px;
-    height: height;
-    width: 30%;
 }
 
 .plug-group{
     text-align: center;
     border:5px #87858b solid;
-    margin: 10px 10%;
+    margin: 10px 10px;
     padding-bottom: 5px;
     border-radius: 5px;
-    height: height;
-    width: 30%;
 }
 
 .plant-group{
     text-align: center;
     border:5px #87858b solid;
-    margin: 10px 10%;
+    margin: 10px 10px;
     padding-bottom: 5px;
     border-radius: 5px;
-    height: height;
-    width: 30%;
+
 }
-
-#arrangement{
-    display: flex;
-}
-
-
 
