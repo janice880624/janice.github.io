@@ -3,12 +3,29 @@
     border-radius: 5px;
 }
 
+header{
+    background-color: rgb(148, 147, 147);
+    margin: 0px 0px;
+    padding: 1px 0px;
+}
+
+body{
+    margin: 0px;
+}
+
+#head{
+    margin: 5px 0px;
+    text-align: center;
+    letter-spacing: 10px;
+    color: rgb(58, 55, 55);
+}
+
 #car_img{
-    width: 80%;
+    width: 50%;
 }
 
 #house_img {
-    width: 50%;
+    width: 70%;
 }
 
 #plug_img {
@@ -27,6 +44,8 @@
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
+    height: height;
+    width: 30%;
 }
 
 .house-group{
@@ -35,6 +54,8 @@
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
+    height: height;
+    width: 30%;
 }
 
 .plug-group{
@@ -43,6 +64,8 @@
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
+    height: height;
+    width: 30%;
 }
 
 .plant-group{
@@ -51,5 +74,13 @@
     margin: 10px 10%;
     padding-bottom: 5px;
     border-radius: 5px;
+    height: height;
+    width: 30%;
 }
+
+#arrangement{
+    display: flex;
+}
+
+
 
