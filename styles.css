@@ -21,25 +21,21 @@ body{
 }
 
 #car_img{
-    width: auto;
-    height: 200px;
+    width: 50%;
 }
 
 #house_img {
-    width: auto;
-    height: 200px;
+    width: 50%;
 }
 
 #plug_img {
     margin-top: 10px;
-    width: auto;
-    height: 180px;
+    width: 50%;
 }
 
 #plant_img {
     margin-top: 10px;
-    width: auto;
-    height: 200px;
+    width: 50%;
 }
 
 .car-group{
