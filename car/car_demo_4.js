@@ -1,5 +1,3 @@
-
-// 車子控制
 var car;
 
 function getElement(dom) {
