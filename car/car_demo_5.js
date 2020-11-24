@@ -1,5 +1,3 @@
-
-// 車子控制
 var car;
 
 function getElement(dom) {
@@ -25,7 +23,6 @@ function controllerBtnEvent(c, e, callback) {
     });
   }
 }
-
 
 boardReady({board: 'Smart', device: 'EMmjD', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
