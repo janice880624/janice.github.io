@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://webduino.io/components/webcomponentsjs/webcomponents.js"></script>
+    <link rel='import' href='https://webduino.io/components/webduino/web-arduino.html' />
+    <link rel='import' href='https://webduino.io/components/webduino/wa-led.html' />
+    <title> 確認是否上線 </title>
+    <style>
+    #msg, form {
+        font-size: 20px;
+        margin: 5px;
+    }
+    #device {
+        max-width: 100px;
+        height: 34px;
+    }
+    #set {
+        width: 70px;
+        height: 40px;
+    }
+    #msg.default::after {
+        content: "None!";
+    }
+    #msg.waiting::after {
+        content: "Loading...";
+    }
+    #msg.ready::after {
+        content: "Ready!";
+    }
+    #msg.setting::after {
+        content: "Setting...";
+    }
+    #msg.set::after {
+        content: "Complete!";
+    }
+    </style>
+</head>
+
+<body>
+    <div id="msg" class="waiting">訊息: </div>
+    <form>
+    <label>device : <input type="text" id="device"></label>
+    <button class="setting" id="set">設定</button>
+    </form>
+</body>
+
+<script>
+    window.addEventListener('WebComponentsReady', function () {
+    var setBtn = document.getElementById('set'),
+        device = document.getElementById('device'),
+        board = document.getElementById('board');
+
+    msg.className = "ready";
+    device.setAttribute('value', localStorage.device || "");
+
+    setBtn.addEventListener('click', function (e) {
+        msg.className = "setting";
+
+        board.device = device.value;
+        board.on('ready', ready);
+        board.init();
+
+        localStorage.device = device.value;
+
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+    }, false);
+
+    function ready() {
+        var led = document.getElementById('led'),
+        light = document.getElementById('light');
+
+        led.on();
+        light.className = 'on';
+        
+        msg.className = "set";
+    };
+
+    }, false);
+  </script>
+
+
+</html>
