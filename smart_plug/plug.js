@@ -9,7 +9,6 @@ console.log('=> ' + device_id);
 var relay;
 var light_statue;
 
-
 boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   relay = getRelay(board, 5);
