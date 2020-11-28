@@ -55,7 +55,6 @@ function buzzer_music(m) {
   return musicNotes;
 }
 
-
 boardReady({board: 'Smart', device: 'EG3aN', transport: 'mqtt'}, async function (board) {
   board.samplingInterval = 50;
   lcd1602 = getLCD1602(board,4,5,0x27);
