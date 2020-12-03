@@ -14,6 +14,13 @@
       <input type="text" id="device_id"> </br> 
       <input type="button" value="送出" onclick="test()" id='test_button'/>
   </div>
+
+  <div id='control'>
+    <b id='input'> 燈串測試用，請輸入 Device ID </br>
+      <input type="text" id="device_id"> </br> 
+      <input type="button" value="送出" onclick="test2()" id='test_button'/>
+  </div>
+
   <div id='demo-group'>
     <img src="../img/exhibition.png" id='demo_img'></br>
     <input type="button" value="展場 demo 用" onclick="location.href='xmastree_demo.html'" id='demo_btn'>
@@ -21,10 +28,14 @@
 </body>
 
 <script>
-  function
-   test(){
-    var s =document.getElementById("device_id");
+  function test(){
+    var s = document.getElementById("device_id");
     location.href="xmastree_music.html?"+"device_id="+encodeURI(s.value);
+  }
+
+  function test2(){
+    var s = document.getElementById("device_id");
+    location.href="xmastree_led.html?"+"device_id="+encodeURI(s.value);
   }
 </script>
 
