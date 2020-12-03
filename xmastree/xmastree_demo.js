@@ -24,7 +24,6 @@ function controllerBtnEvent(c, e, callback) {
   }
 }
 
-
 boardReady({board: 'Smart', device: 'Y8JRm', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   dfplayer = getDFPlayer(board,13,12);
