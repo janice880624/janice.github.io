@@ -6,12 +6,8 @@ alert("Device ID:" + device_id);
 // document.write("device_id:"+device_id)
 console.log('=> ' + device_id);
 
-var dfplayer;
 var led;
-var photocell;
 var light;
-var myData;
-
 
 boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
