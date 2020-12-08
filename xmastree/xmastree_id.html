@@ -21,6 +21,12 @@
       <input type="button" value="送出" onclick="test2()" id='test_button'/>
   </div>
 
+  <div id='control'>
+    <b id='input'> 完整版本，請輸入 Device ID </br>
+      <input type="text" id="device_id3"> </br> 
+      <input type="button" value="送出" onclick="test3()" id='test_button'/>
+  </div>
+
   <div id='demo-group'>
     <img src="../img/exhibition.png" id='demo_img'></br>
     <input type="button" value="展場 demo 用" onclick="location.href='xmastree_demo.html'" id='demo_btn'>
@@ -36,6 +42,11 @@
   function test2(){
     var s = document.getElementById("device_id2");
     location.href="xmastree_led.html?"+"device_id2="+encodeURI(s.value);
+  }
+
+  function test3(){
+    var s = document.getElementById("device_id3");
+    location.href="xmastree_led.html?"+"device_id3="+encodeURI(s.value);
   }
 </script>
 
