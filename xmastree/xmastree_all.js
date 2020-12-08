@@ -40,26 +40,37 @@ boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (boa
   document.getElementById('btn1').addEventListener('click',function () {
     led.on();
   });
+
   document.getElementById('btn2').addEventListener('click',function () {
     led.off();
   });
+
   document.getElementById('btn3').addEventListener('click',function () {
     led.blink(500);
   });
 
-  controllerBtnEvent(getElement('#btn .play'),'click', function () {
-    dfplayer.start();
+  document.getElementById('btn3').addEventListener('click',function () {
+    led.blink(500);
   });
-  controllerBtnEvent(getElement('#btn .stop'),'click', function () {
+
+  document.getElementById('play').addEventListener('click',function () {
+    ldfplayer.start();
+  });
+
+  document.getElementById('stop').addEventListener('click',function () {
     dfplayer.stop();
   });
-  controllerBtnEvent(getElement('#btn .pause'),'click', function () {
+
+  document.getElementById('pause').addEventListener('click',function () {
     dfplayer.pause();
   });
-  controllerBtnEvent(getElement('#btn .next'),'click', function () {
+
+  document.getElementById('next').addEventListener('click',function () {
     dfplayer.next();
   });
-  controllerBtnEvent(getElement('#btn .pre'),'click', function () {
+
+  document.getElementById('pre').addEventListener('click',function () {
     dfplayer.previous();
   });
+
 });
