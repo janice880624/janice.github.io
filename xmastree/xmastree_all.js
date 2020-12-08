@@ -34,19 +34,37 @@ function controllerBtnEvent(c, e, callback) {
 boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   dfplayer = getDFPlayer(board,13,12);
+
+  controllerBtnEvent(getElement('#btn-group .on'),'click', function () {
+    led.on();
+  });
+
+  controllerBtnEvent(getElement('#btn-group .off'),'click', function () {
+    led.off();
+  });
+
+  controllerBtnEvent(getElement('#btn-group .onoff'),'click', function () {
+    led.blink(500);
+  });
+
   controllerBtnEvent(getElement('#btn-group .play'),'click', function () {
     dfplayer.start();
   });
+
   controllerBtnEvent(getElement('#btn-group .stop'),'click', function () {
     dfplayer.stop();
   });
+
   controllerBtnEvent(getElement('#btn-group .pause'),'click', function () {
     dfplayer.pause();
   });
+
   controllerBtnEvent(getElement('#btn-group .next'),'click', function () {
     dfplayer.next();
   });
+
   controllerBtnEvent(getElement('#btn-group .pre'),'click', function () {
     dfplayer.previous();
   });
+
 });
