@@ -6,6 +6,8 @@ alert("Device ID:" + device_id);
 console.log('=> ' + device_id);
 
 var dfplayer;
+var led;
+var light;
 
 function getElement(dom) {
   var element = document.querySelector(dom);
@@ -34,6 +36,7 @@ function controllerBtnEvent(c, e, callback) {
 boardReady({board: 'Smart', device: device_id, transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   dfplayer = getDFPlayer(board,13,12);
+  led = getLed(board, 5);
 
   controllerBtnEvent(getElement('#btn-group .on'),'click', function () {
     led.on();
