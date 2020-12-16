@@ -1,6 +1,8 @@
 var led;
 var light;
 
+// 開發版 janice
+
 boardReady({board: 'Smart', device: '10QjYMKV', transport: 'mqtt'}, function (board) {
   board.samplingInterval = 50;
   led = getLed(board, 5);
