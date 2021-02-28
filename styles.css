@@ -1,4 +1,4 @@
-#car_btn, #house_btn, #plug_btn, #plant_btn, #xmastree_btn{
+#car_btn, #house_btn, #plug_btn, #plant_btn, #xmastree_btn, #toilet-paper_btn{
     font-size: 20px;
     border-radius: 5px;
 }
@@ -43,6 +43,11 @@ body{
     width: 50%;
 }
 
+#toilet-paper_img {
+    margin-top: 10px;
+    width: 50%;
+}
+
 .car-group{
     text-align: center;
     border:5px #87858b solid;
@@ -76,6 +81,14 @@ body{
 }
 
 .xmastree-group{
+    text-align: center;
+    border:5px #87858b solid;
+    margin: 10px 10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.toilet-paper-group{
     text-align: center;
     border:5px #87858b solid;
     margin: 10px 10px;
