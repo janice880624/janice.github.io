@@ -22,17 +22,6 @@ boardReady({board1: 'Smart', device: '10ywPWNV', transport: 'mqtt'}, function (b
             document.getElementById('box1').style.backgroundColor =  "rgb(169, 240, 240)";
         }
     }, 500);
-
-    setInterval(function () {
-        if (who == 1 && send == false) {
-            lineNotify.notify({
-                message: '一號衛生紙要補充了喔!!',
-            }).then(() => {
-                console.log('send completed!');
-            });
-            send = true;
-        }
-    }, 1000 * 5);
 });
 
 boardReady({board2: 'Smart', device: '10dLYwYy', transport: 'mqtt'}, function (board2) {
@@ -49,17 +38,6 @@ boardReady({board2: 'Smart', device: '10dLYwYy', transport: 'mqtt'}, function (b
             document.getElementById('box2').style.backgroundColor =  "rgb(169, 240, 240)";
         }
     }, 500);
-
-    setInterval(function () {
-        if (who == 2 && send == false) {
-            lineNotify.notify({
-                message: '二號衛生紙要補充了喔!!',
-            }).then(() => {
-                console.log('send completed!');
-            });
-            send = true;
-        }
-    }, 1000 * 5);
 });
 
 boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (board3) {
@@ -76,17 +54,6 @@ boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (b
             document.getElementById('box3').style.backgroundColor =  "rgb(169, 240, 240)";
         }
     }, 500);
-
-    setInterval(function () {
-        if (who == 3 && send == false) {
-            lineNotify.notify({
-                message: '三號衛生紙要補充了喔!!',
-            }).then(() => {
-                console.log('send completed!');
-            });
-            send = true;
-        }
-    }, 1000 * 5);
 });
 
 const lineNotify = require('line-notify-nodejs')('XEyxMI5MOWSQRqZLUBg73R5MLHJXxkMOY3nMOFahDBy');
@@ -97,29 +64,29 @@ lineNotify.notify({
    console.log('send completed!');
 });
 
-// setInterval(function () {
-//     if (who == 1 && send == false) {
-//         lineNotify.notify({
-//             message: '一號衛生紙要補充了喔!!',
-//         }).then(() => {
-//             console.log('send completed!');
-//         });
-//         send = true;
-//     } else if (who == 2 && send == false) {
-//         lineNotify.notify({
-//             message: '二號衛生紙要補充了喔!!',
-//         }).then(() => {
-//             console.log('send completed!');
-//         });
-//         send = true;
-//     } else if (who == 3 && send == false) {
-//         lineNotify.notify({
-//             message: '三號衛生紙要補充了喔!!',
-//         }).then(() => {
-//             console.log('send completed!');
-//         });
-//         send = true;
-//     }
-// }, 1000 * 5);
+setInterval(function () {
+    if (who == 1 && send == false) {
+        lineNotify.notify({
+            message: '一號衛生紙要補充了喔!!',
+        }).then(() => {
+            console.log('send completed!');
+        });
+        send = true;
+    } else if (who == 2 && send == false) {
+        lineNotify.notify({
+            message: '二號衛生紙要補充了喔!!',
+        }).then(() => {
+            console.log('send completed!');
+        });
+        send = true;
+    } else if (who == 3 && send == false) {
+        lineNotify.notify({
+            message: '三號衛生紙要補充了喔!!',
+        }).then(() => {
+            console.log('send completed!');
+        });
+        send = true;
+    }
+}, 1000 * 5);
 
 // XEyxMI5MOWSQRqZLUBg73R5MLHJXxkMOY3nMOFahDBy
