@@ -56,40 +56,53 @@ boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (b
     }, 500);
 });
 
-const lineNotify = require('line-notify-nodejs')('XEyxMI5MOWSQRqZLUBg73R5MLHJXxkMOY3nMOFahDBy');
+// boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (board3) {
+//     board3.samplingInterval = 50;
+//     ultrasonic3 = getUltrasonic(board3, ul_echo, ul_trig);
+//     ultrasonic3.ping(function (cm) {
+//         document.getElementById('sensor_3').innerHTML = ultrasonic3.distance;
+//         if (ultrasonic3.distance > 40) {
+//             document.getElementById('box3').style.backgroundColor =  "#f02409";
+//         } else if (ultrasonic3.distance > 35)  {
+//             document.getElementById('box3').style.backgroundColor =  "#f09409";
+//         } else if (ultrasonic3.distance > 30) {
+//             document.getElementById('box3').style.backgroundColor =  "#f0d909";
+//         } else if (ultrasonic3.distance > 25) {
+//             document.getElementById('box3').style.backgroundColor =  "#5ef009";
+//         }  else if (ultrasonic3.distance > 20) {
+//             document.getElementById('box3').style.backgroundColor =  "#3e8dd6";
+//         }  else if (ultrasonic3.distance > 15) {
+//             document.getElementById('box3').style.backgroundColor =  "#6d09f0";
+//         }  else if (ultrasonic3.distance > 10) {
+//             document.getElementById('box3').style.backgroundColor =  "#e42ae4";
+//         } else {
+//             document.getElementById('box3').style.backgroundColor =  "#ffffff";
+//         }
+//     }, 500);
+// });
 
-lineNotify.notify({
-   message: '智慧監控裝置已連線',
-}).then(() => {
-   console.log('send completed!');
-});
 
-setInterval(function () {
-    if (who == 1 && send == false) {
-        cosole.log(who);
-        lineNotify.notify({
-            message: '一號衛生紙要補充了喔!!',
-        }).then(() => {
-            console.log('send completed!');
-        });
-        send = true;
-    } else if (who == 2 && send == false) {
-        cosole.log(who);
-        lineNotify.notify({
-            message: '二號衛生紙要補充了喔!!',
-        }).then(() => {
-            console.log('send completed!');
-        });
-        send = true;
-    } else if (who == 3 && send == false) {
-        cosole.log(who);
-        lineNotify.notify({
-            message: '三號衛生紙要補充了喔!!',
-        }).then(() => {
-            console.log('send completed!');
-        });
-        send = true;
-    }
-}, 1000 * 5);
 
 // XEyxMI5MOWSQRqZLUBg73R5MLHJXxkMOY3nMOFahDBy
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCb9AvUhJCgO8BFZSBFXNQ4f70n9NGpYRE",
+    authDomain: "toilet-paper-df2dd.firebaseapp.com",
+    projectId: "toilet-paper-df2dd",
+    storageBucket: "toilet-paper-df2dd.appspot.com",
+    messagingSenderId: "726766110879",
+    appId: "1:726766110879:web:b3ebbf4de7a736ab523aaa",
+    measurementId: "G-Q6TX418G79"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+var db = firebase.firestore();
+
+function storedata() {
+  db.collection("movies").doc("新世紀福爾摩斯").set({
+    name: "新世紀福爾摩斯",
+    date: "2010",
+  });
+}
