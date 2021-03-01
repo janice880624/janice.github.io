@@ -66,6 +66,7 @@ lineNotify.notify({
 
 setInterval(function () {
     if (who == 1 && send == false) {
+        cosole.log(who);
         lineNotify.notify({
             message: '一號衛生紙要補充了喔!!',
         }).then(() => {
@@ -73,6 +74,7 @@ setInterval(function () {
         });
         send = true;
     } else if (who == 2 && send == false) {
+        cosole.log(who);
         lineNotify.notify({
             message: '二號衛生紙要補充了喔!!',
         }).then(() => {
@@ -80,6 +82,7 @@ setInterval(function () {
         });
         send = true;
     } else if (who == 3 && send == false) {
+        cosole.log(who);
         lineNotify.notify({
             message: '三號衛生紙要補充了喔!!',
         }).then(() => {
