@@ -99,10 +99,12 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 var db = firebase.firestore();
+var ref = db.collection('fruit').doc('apple');
 
-function storedata() {
-  db.collection("movies").doc("新世紀福爾摩斯").set({
-    name: "新世紀福爾摩斯",
-    date: "2010",
-  });
-}
+ref.set({
+  total: 500,
+  good: 480,
+  sale: 330
+}).then(() => {
+  console.log('set data successful');
+});
