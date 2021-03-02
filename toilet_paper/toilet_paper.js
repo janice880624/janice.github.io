@@ -51,6 +51,18 @@ ref_3.set({
     console.log('set data3 successful');
 });
 
+// ref_1.delete().then(() => {
+//     console.log('delete data1 successful');
+// });
+
+// ref_2.delete().then(() => {
+//     console.log('delete data1 successful');
+// });
+
+// ref_3.delete().then(() => {
+//     console.log('delete data1 successful');
+// });
+
 function get_time(t) {
     var varTime = new Date(),
         varHours = varTime.getHours(),
@@ -104,7 +116,7 @@ boardReady({board2: 'Smart', device: '10dLYwYy', transport: 'mqtt'}, function (b
             document.getElementById('sensor_2_add').innerHTML = ' ';
             document.getElementById('box2').style.backgroundColor =  "rgb(169, 240, 240)";
         }
-        ref_2a.add({
+        ref_2.add({
             time:get_time("hms"),
             dis:ultrasonic2.distance
         }).then(() => {
