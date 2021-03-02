@@ -8,6 +8,67 @@ var ul_echo = 16;
 var who = 0;
 var send = false;
 
+var firebaseConfig = {
+    apiKey: "AIzaSyCb9AvUhJCgO8BFZSBFXNQ4f70n9NGpYRE",
+    authDomain: "toilet-paper-df2dd.firebaseapp.com",
+    projectId: "toilet-paper-df2dd",
+    storageBucket: "toilet-paper-df2dd.appspot.com",
+    messagingSenderId: "726766110879",
+    appId: "1:726766110879:web:b3ebbf4de7a736ab523aaa",
+    measurementId: "G-Q6TX418G79"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+var db = firebase.firestore();
+var ref_1 = db.collection('sensor_1').doc(); 
+var ref_2 = db.collection('sensor_2').doc(); 
+var ref_3 = db.collection('sensor_3').doc(); 
+
+var ref_1a = db.collection('sensor_1');
+var ref_2a = db.collection('sensor_2');
+var ref_3a = db.collection('sensor_3');
+
+ref_1.set({
+    time:"start",
+    dis:"start"
+}).then(() => {
+    console.log('set data1 successful');
+});
+
+ref_2.set({
+    time:"start",
+    dis:"start"
+}).then(() => {
+    console.log('set data2 successful');
+});
+
+ref_3.set({
+    time:"start",
+    dis:"start"
+}).then(() => {
+    console.log('set data3 successful');
+});
+
+function get_time(t) {
+    var varTime = new Date(),
+        varHours = varTime.getHours(),
+        varMinutes = varTime.getMinutes(),
+        varSeconds = varTime.getSeconds();
+    var varNow;
+    if (t == "hms") {
+        varNow = varHours + ":" + varMinutes + ":" + varSeconds;
+    } else if (t == "h") {
+        varNow = varHours;
+    } else if (t == "m") {
+        varNow = varMinutes;
+    } else if (t == "s") {
+        varNow = varSeconds;
+    }
+    return varNow;
+}
+
 boardReady({board1: 'Smart', device: '10ywPWNV', transport: 'mqtt'}, function (board1) {
     board1.samplingInterval = 50;
     ultrasonic1 = getUltrasonic(board1, ul_echo, ul_trig);
@@ -21,7 +82,13 @@ boardReady({board1: 'Smart', device: '10ywPWNV', transport: 'mqtt'}, function (b
             document.getElementById('sensor_1_add').innerHTML = ' ';
             document.getElementById('box1').style.backgroundColor =  "rgb(169, 240, 240)";
         }
-    }, 500);
+        ref_1a.add({
+            time:get_time("hms"),
+            dis:ultrasonic1.distance
+        }).then(() => {
+            console.log('set data1 successful');
+        });
+    }, 5000);
 });
 
 boardReady({board2: 'Smart', device: '10dLYwYy', transport: 'mqtt'}, function (board2) {
@@ -37,7 +104,13 @@ boardReady({board2: 'Smart', device: '10dLYwYy', transport: 'mqtt'}, function (b
             document.getElementById('sensor_2_add').innerHTML = ' ';
             document.getElementById('box2').style.backgroundColor =  "rgb(169, 240, 240)";
         }
-    }, 500);
+        ref_2a.add({
+            time:get_time("hms"),
+            dis:ultrasonic2.distance
+        }).then(() => {
+            console.log('set data2 successful');
+        });
+    }, 5000);
 });
 
 boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (board3) {
@@ -53,58 +126,12 @@ boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (b
             document.getElementById('sensor_3_add').innerHTML = ' ';
             document.getElementById('box3').style.backgroundColor =  "rgb(169, 240, 240)";
         }
-    }, 500);
+        ref_3a.add({
+            time:get_time("hms"),
+            dis:ultrasonic3.distance
+        }).then(() => {
+            console.log('set data3 successful');
+        });
+    }, 5000);
 });
 
-// boardReady({board3: 'Smart', device: '10Vk7gDV', transport: 'mqtt'}, function (board3) {
-//     board3.samplingInterval = 50;
-//     ultrasonic3 = getUltrasonic(board3, ul_echo, ul_trig);
-//     ultrasonic3.ping(function (cm) {
-//         document.getElementById('sensor_3').innerHTML = ultrasonic3.distance;
-//         if (ultrasonic3.distance > 40) {
-//             document.getElementById('box3').style.backgroundColor =  "#f02409";
-//         } else if (ultrasonic3.distance > 35)  {
-//             document.getElementById('box3').style.backgroundColor =  "#f09409";
-//         } else if (ultrasonic3.distance > 30) {
-//             document.getElementById('box3').style.backgroundColor =  "#f0d909";
-//         } else if (ultrasonic3.distance > 25) {
-//             document.getElementById('box3').style.backgroundColor =  "#5ef009";
-//         }  else if (ultrasonic3.distance > 20) {
-//             document.getElementById('box3').style.backgroundColor =  "#3e8dd6";
-//         }  else if (ultrasonic3.distance > 15) {
-//             document.getElementById('box3').style.backgroundColor =  "#6d09f0";
-//         }  else if (ultrasonic3.distance > 10) {
-//             document.getElementById('box3').style.backgroundColor =  "#e42ae4";
-//         } else {
-//             document.getElementById('box3').style.backgroundColor =  "#ffffff";
-//         }
-//     }, 500);
-// });
-
-
-
-// XEyxMI5MOWSQRqZLUBg73R5MLHJXxkMOY3nMOFahDBy
-
-var firebaseConfig = {
-    apiKey: "AIzaSyCb9AvUhJCgO8BFZSBFXNQ4f70n9NGpYRE",
-    authDomain: "toilet-paper-df2dd.firebaseapp.com",
-    projectId: "toilet-paper-df2dd",
-    storageBucket: "toilet-paper-df2dd.appspot.com",
-    messagingSenderId: "726766110879",
-    appId: "1:726766110879:web:b3ebbf4de7a736ab523aaa",
-    measurementId: "G-Q6TX418G79"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-var db = firebase.firestore();
-var ref = db.collection('fruit').doc('apple');
-
-ref.set({
-  total: 500,
-  good: 480,
-  sale: 330
-}).then(() => {
-  console.log('set data successful');
-});
