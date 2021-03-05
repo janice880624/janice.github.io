@@ -1,0 +1,9 @@
+.body{
+    border: aquamarine;
+}
+
+#sun_img, #climbing_img {
+    margin-top: 10px;
+    width: 50%;
+}
+
