@@ -1,9 +1,29 @@
-.body{
-    border: aquamarine;
+body{
+    text-align: center;
 }
 
-#sun_img, #climbing_img {
+#sun_img, #climbing {
     margin-top: 10px;
-    width: 50%;
+    width: 200px;
 }
 
+#t1{
+    margin: 0px;
+    margin-top: 5px;
+}
+
+#d1{
+    margin:10px auto;
+    text-align: center;
+    border:2px blue solid;
+    padding-bottom: 5px;
+}
+
+#d11{
+    display: inline-block;
+    
+}
+
+#d12{
+    display: inline-block;
+}
